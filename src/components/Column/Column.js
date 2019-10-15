@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import Card from '../Card';
 import Creator from '../Creator';
 import { settings } from '../../data/dataStore';
-import ReactHtmlParser from 'react-html-parser';
 import Icon from '../Icon';
 
 class Column extends React.Component {
   static propTypes = {
-    title: PropTypes.node.isRequired,
+    cards: PropTypes.array.isRequired,
     icon: PropTypes.string.isRequired,
+    title: PropTypes.node.isRequired,
   }
 
   static defaultProps = {
-    description: settings.defaultColumnIcon
+    description: settings.defaultColumnIcon,
   }
 
   state = {
@@ -27,9 +27,9 @@ class Column extends React.Component {
         ...prevState.cards,
         {
           key: prevState.cards.length ? prevState.cards[prevState.cards.length - 1].key + 1 : 0,
-          title
-        }
-      ]
+          title,
+        },
+      ],
     })
     );
   }
@@ -51,9 +51,5 @@ class Column extends React.Component {
     );
   }
 }
-
-Column.propTypes = {
-  title: PropTypes.node.isRequired,
-};
 
 export default Column;

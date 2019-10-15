@@ -10,7 +10,7 @@ const Hero = ({ titleText, link }) => {
       <img src={link} className={styles.image} />
     </header>
   );
-}
+};
 
 Hero.propTypes = {
   titleText: PropTypes.node.isRequired,
