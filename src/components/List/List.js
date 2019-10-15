@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero';
 import PropTypes from 'prop-types';
-// import Column from '../Column';
+import Column from '../Column/ColumnContainer';
 import { settings } from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
 // import Creator from '../Creator';
@@ -20,16 +20,16 @@ class List extends React.Component {
   }
 
   render() {
-    const { title, image, description } = this.props;
+    const { title, image, description, columns } = this.props;
     return (
       <setion className={styles.component}>
         <Hero titleText={title} image={image} />
         {ReactHtmlParser(description)}
-        {/* <div className={styles.columns}>
-          {this.state.columns.map(({ key, ...columnProps }) => (
-            <Column key={key} {...columnProps} />
+        <div className={styles.columns}>
+          {columns.map(columndData => (
+            <Column key={columndData.id} {...columndData} />
           ))}
-        </div> */}
+        </div>
         {/* <div className={styles.creator}> */}
         {/* Question action */}
         {/* <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)} />
