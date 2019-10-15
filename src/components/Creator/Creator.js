@@ -6,8 +6,8 @@ import PropTypes from 'prop-types';
 class Creator extends React.Component {
   static propTypes = {
     text: PropTypes.string,
-    // TODO change action  proptype (ask)
-    action: PropTypes.node.isRequired,
+    // TODO change action  proptype (ask) -> changed but not sure if is it correct
+    action: PropTypes.func,
   }
 
   static defaultProps = {
