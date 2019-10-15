@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 class Creator extends React.Component {
   static propTypes = {
     text: PropTypes.string,
+    // TODO change action  proptype (ask)
     action: PropTypes.node.isRequired,
   }
 
