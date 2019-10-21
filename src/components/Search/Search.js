@@ -13,16 +13,16 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
-  }
+  };
 
   static defaultProps = {
     text: settings.search.defaultText,
     icon: settings.search.icon,
-  }
+  };
 
   state = {
     value: this.props.searchString || '',
-  }
+  };
 
   handleChange(event) {
     this.setState({
@@ -34,10 +34,11 @@ class Search extends React.Component {
     this.props.changeSearchString(this.state.value);
   }
   // Comment code: error:
-  // 37:3  error  componentWillReceiveProps is deprecated since React 16.9.0, use UNSAFE_componentWillReceiveProps instead, 
-  // see https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops. 
+  // 37:3  error  componentWillReceiveProps is deprecated since React 16.9.0, use UNSAFE_componentWillReceiveProps instead,
+  // see https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops.
   // Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components  react/no-deprecated
 
+  // Musialem skomentowac bo wywalalo blad
   // componentWillReceiveProps(newProps) {
   //   this.setState({ value: newProps.searchString });
   // }
@@ -54,7 +55,9 @@ class Search extends React.Component {
           onChange={event => this.handleChange(event)}
         />
         <div className={styles.buttons}>
-          <Button onClick={() => this.handleOK()}><Icon name={icon} /></Button>
+          <Button onClick={() => this.handleOK()}>
+            <Icon name={icon} />
+          </Button>
         </div>
         <div>
           {countVisible == countAll ? '' : `${countVisible} / ${countAll}`}
