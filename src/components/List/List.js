@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import styles from './List.scss';
 import Hero from '../Hero';
 import PropTypes from 'prop-types';
