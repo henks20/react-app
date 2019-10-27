@@ -5,6 +5,7 @@ import Container from '../Container/Container';
 import Icon from '../Icon/Icon';
 import { settings } from '../../data/dataStore';
 import PropTypes from 'prop-types';
+import Search from '../Search/SearchContainer';
 
 class Header extends React.Component {
   static propTypes = {
@@ -22,6 +23,7 @@ class Header extends React.Component {
         <Container>
           <div className={styles.wrapper}>
             <Link className={styles.logo} to='/'><Icon name={icon} /></Link>
+            <Search />
             <nav>
               {/* //klasa zostanie nadana jak link aktywny */}
               <NavLink exact to='/' activeClassName='active'>Home</NavLink>

@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import { settings } from '../../data/dataStore';
 import Icon from '../Icon/Icon';
 import Container from '../Container/Container';
+import { withRouter } from 'react-router';
+// https://www.npmjs.com/package/react-router-prop-types
+import ReactRouterPropTypes from 'react-router-prop-types';
 
 class Search extends React.Component {
   static propTypes = {
@@ -14,6 +17,7 @@ class Search extends React.Component {
     changeSearchString: PropTypes.func,
     countVisible: PropTypes.number,
     countAll: PropTypes.number,
+    history: ReactRouterPropTypes.history,
   };
 
   static defaultProps = {
@@ -32,7 +36,8 @@ class Search extends React.Component {
   }
 
   handleOK() {
-    this.props.changeSearchString(this.state.value);
+    // this.props.changeSearchString(this.state.value);
+    this.props.history.push(`/search/${this.state.value}`);
   }
   // Comment code: error:
   // 37:3  error  componentWillReceiveProps is deprecated since React 16.9.0, use UNSAFE_componentWillReceiveProps instead,
@@ -48,8 +53,8 @@ class Search extends React.Component {
     const { text, icon, countVisible, countAll } = this.props;
     const { value } = this.state;
     return (
-      <div className={styles.component}>
-        <Container>
+      <Container>
+        <div className={styles.component}>
           <input
             type='text'
             placeholder={text}
@@ -64,10 +69,10 @@ class Search extends React.Component {
           <div>
             {countVisible == countAll ? '' : `${countVisible} / ${countAll}`}
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
     );
   }
 }
 
-export default Search;
+export default withRouter(Search);
