@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import MainLayout from '../MainLayout/MainLayout';
 import Faq from '../Faq/Faq';
 import List from '../List/ListContainer';
+// npm upgrade react-router-dom
 import { AnimatedSwitch } from 'react-router-transition';
 import styles from './App.scss';
 import SearchResults from '../SearchResults/SearchResultsContainer';
