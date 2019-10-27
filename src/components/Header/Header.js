@@ -21,7 +21,7 @@ class Header extends React.Component {
       <header className={styles.component}>
         <Container>
           <div className={styles.wrapper}>
-            <Link className={styles.logo} to={'/'}><Icon name={icon} /></Link>
+            <Link className={styles.logo} to='/'><Icon name={icon} /></Link>
             <nav>
               {/* //klasa zostanie nadana jak link aktywny */}
               <NavLink exact to='/' activeClassName='active'>Home</NavLink>
