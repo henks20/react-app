@@ -1,1 +1,1 @@
-npm run deployApp
+web: npm run deployApp
